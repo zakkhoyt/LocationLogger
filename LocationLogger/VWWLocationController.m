@@ -96,7 +96,9 @@ static NSString *SMLocationControllerLongitudeKey = @"longitude";
 }
 
 
-
+-(CLLocation*)lastLocation{
+    return self.location;
+}
 
 -(void)reset{
     [self stop];
