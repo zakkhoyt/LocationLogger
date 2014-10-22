@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 @interface VWWUserDefaults : NSObject
 
 +(void)addCoordinate:(NSDictionary*)coordinateDictionary;
 +(NSArray*)coordinates;
-
++(void)clearCoordinates;
 
 
 +(void)addLaunchOptions:(NSDictionary*)launchParameter;
 +(NSArray*)launchOptions;
-
++(void)clearLaunchOptions;
 @end

@@ -19,6 +19,11 @@
     [super viewDidLoad];
     
     [self reloadLaunches];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSUserDefaultsDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [self reloadLaunches];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {

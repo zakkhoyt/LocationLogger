@@ -21,11 +21,18 @@ static NSString *VWWUserDefaultCoordinates = @"VWWUserDefaultCoordinates";
     }
     [launchOptionsDictionaries insertObject:coordinateDictionary atIndex:0];
     [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:launchOptionsDictionaries] forKey:VWWUserDefaultCoordinates];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 +(NSArray*)coordinates{
     NSArray *launchOptionsDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultCoordinates];
     return launchOptionsDictionaries;
 }
++(void)clearCoordinates{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:VWWUserDefaultCoordinates];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 
 static NSString *VWWUserDefaultLaunchOptionsKey = @"VWWUserDefaultLaunchOptionsKey";
 +(void)addLaunchOptions:(NSDictionary*)launchParameter{
@@ -35,6 +42,7 @@ static NSString *VWWUserDefaultLaunchOptionsKey = @"VWWUserDefaultLaunchOptionsK
     }
     [launchOptionsDictionaries insertObject:launchParameter atIndex:0];
     [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:launchOptionsDictionaries] forKey:VWWUserDefaultLaunchOptionsKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 +(NSArray*)launchOptions{
@@ -42,4 +50,8 @@ static NSString *VWWUserDefaultLaunchOptionsKey = @"VWWUserDefaultLaunchOptionsK
     return launchOptionsDictionaries;
 }
 
++(void)clearLaunchOptions{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:VWWUserDefaultLaunchOptionsKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 @end

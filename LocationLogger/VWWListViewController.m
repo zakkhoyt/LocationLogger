@@ -29,6 +29,10 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:VWWLocationControllerNewLocationKey object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self reloadCoordinates];
     }];
+
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSUserDefaultsDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [self reloadCoordinates];
+    }];
 }
 
 

@@ -21,6 +21,7 @@
 		C647B7E319F6FC3E000352BA /* VWWLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7E219F6FC3E000352BA /* VWWLaunchViewController.m */; };
 		C647B7E619F6FCC8000352BA /* VWWAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7E519F6FCC8000352BA /* VWWAnnotation.m */; };
 		C647B7E819F6FDBF000352BA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C647B7E719F6FDBF000352BA /* MapKit.framework */; };
+		C647B7EB19F81E0D000352BA /* VWWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7EA19F81E0D000352BA /* VWWSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		C647B7E419F6FCC8000352BA /* VWWAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAnnotation.h; sourceTree = "<group>"; };
 		C647B7E519F6FCC8000352BA /* VWWAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAnnotation.m; sourceTree = "<group>"; };
 		C647B7E719F6FDBF000352BA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C647B7E919F81E0D000352BA /* VWWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsViewController.h; sourceTree = "<group>"; };
+		C647B7EA19F81E0D000352BA /* VWWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,23 +110,12 @@
 		C647B7A819F6F27C000352BA /* LocationLogger */ = {
 			isa = PBXGroup;
 			children = (
-				C647B7D019F6F2BA000352BA /* VWW */,
-				C647B7D919F6F2BA000352BA /* VWWLocationController.h */,
-				C647B7DA19F6F2BA000352BA /* VWWLocationController.m */,
-				C647B7AD19F6F27C000352BA /* AppDelegate.h */,
-				C647B7AE19F6F27C000352BA /* AppDelegate.m */,
-				C647B7B019F6F27C000352BA /* VWWListViewController.h */,
-				C647B7B119F6F27C000352BA /* VWWListViewController.m */,
-				C647B7DE19F6FC2B000352BA /* VWWMapViewController.h */,
-				C647B7DF19F6FC2B000352BA /* VWWMapViewController.m */,
-				C647B7E119F6FC3E000352BA /* VWWLaunchViewController.h */,
-				C647B7E219F6FC3E000352BA /* VWWLaunchViewController.m */,
-				C647B7B319F6F27C000352BA /* Main.storyboard */,
+				C647B7F119F81E40000352BA /* Controllers */,
 				C647B7B619F6F27C000352BA /* Images.xcassets */,
-				C647B7B819F6F27C000352BA /* LaunchScreen.xib */,
 				C647B7A919F6F27C000352BA /* Supporting Files */,
-				C647B7E419F6FCC8000352BA /* VWWAnnotation.h */,
-				C647B7E519F6FCC8000352BA /* VWWAnnotation.m */,
+				C647B7F219F81E4E000352BA /* UserInterface */,
+				C647B7EC19F81E19000352BA /* ViewControllers */,
+				C647B7D019F6F2BA000352BA /* VWW */,
 			);
 			path = LocationLogger;
 			sourceTree = "<group>";
@@ -131,6 +123,8 @@
 		C647B7A919F6F27C000352BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C647B7AD19F6F27C000352BA /* AppDelegate.h */,
+				C647B7AE19F6F27C000352BA /* AppDelegate.m */,
 				C647B7AA19F6F27C000352BA /* Info.plist */,
 				C647B7AB19F6F27C000352BA /* main.m */,
 			);
@@ -167,6 +161,81 @@
 				C647B7D819F6F2BA000352BA /* VWWUtilities.m */,
 			);
 			path = VWW;
+			sourceTree = "<group>";
+		};
+		C647B7EC19F81E19000352BA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C647B7ED19F81E23000352BA /* List */,
+				C647B7EE19F81E28000352BA /* Map */,
+				C647B7EF19F81E2D000352BA /* Launch */,
+				C647B7F019F81E36000352BA /* Settings */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C647B7ED19F81E23000352BA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C647B7B019F6F27C000352BA /* VWWListViewController.h */,
+				C647B7B119F6F27C000352BA /* VWWListViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		C647B7EE19F81E28000352BA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C647B7F319F81E62000352BA /* Annotations */,
+				C647B7DE19F6FC2B000352BA /* VWWMapViewController.h */,
+				C647B7DF19F6FC2B000352BA /* VWWMapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		C647B7EF19F81E2D000352BA /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				C647B7E119F6FC3E000352BA /* VWWLaunchViewController.h */,
+				C647B7E219F6FC3E000352BA /* VWWLaunchViewController.m */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
+		C647B7F019F81E36000352BA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C647B7E919F81E0D000352BA /* VWWSettingsViewController.h */,
+				C647B7EA19F81E0D000352BA /* VWWSettingsViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		C647B7F119F81E40000352BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C647B7D919F6F2BA000352BA /* VWWLocationController.h */,
+				C647B7DA19F6F2BA000352BA /* VWWLocationController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C647B7F219F81E4E000352BA /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				C647B7B319F6F27C000352BA /* Main.storyboard */,
+				C647B7B819F6F27C000352BA /* LaunchScreen.xib */,
+			);
+			name = UserInterface;
+			sourceTree = "<group>";
+		};
+		C647B7F319F81E62000352BA /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				C647B7E419F6FCC8000352BA /* VWWAnnotation.h */,
+				C647B7E519F6FCC8000352BA /* VWWAnnotation.m */,
+			);
+			name = Annotations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +349,7 @@
 				C647B7E019F6FC2B000352BA /* VWWMapViewController.m in Sources */,
 				C647B7E619F6FCC8000352BA /* VWWAnnotation.m in Sources */,
 				C647B7AF19F6F27C000352BA /* AppDelegate.m in Sources */,
+				C647B7EB19F81E0D000352BA /* VWWSettingsViewController.m in Sources */,
 				C647B7AC19F6F27C000352BA /* main.m in Sources */,
 				C647B7DB19F6F2BA000352BA /* VWWUserDefaults.m in Sources */,
 				C647B7DD19F6F2BA000352BA /* VWWLocationController.m in Sources */,
@@ -405,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocationLogger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -415,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocationLogger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -473,6 +545,7 @@
 				C647B7CB19F6F27C000352BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C647B7CC19F6F27C000352BA /* Build configuration list for PBXNativeTarget "LocationLoggerTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +554,7 @@
 				C647B7CE19F6F27C000352BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
