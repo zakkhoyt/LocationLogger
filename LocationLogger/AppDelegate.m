@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "VWWLocationController.h"
+#import "VWWSignificantLocationController.h"
 #import "VWW.h"
 
 #import "VWWUserDefaults.h"
@@ -39,7 +39,7 @@
     [VWWUserDefaults addLaunchOptions:mutableLaunchOptions];
     
     // Start location manager to receive the location
-    [[VWWLocationController sharedInstance]start];
+    [[VWWSignificantLocationController sharedInstance]start];
     
     return YES;
 }

@@ -15,7 +15,7 @@
 // Title and subtitle for use by selection UI.
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSString *subtitle;
-
+@property (nonatomic) NSUInteger colorIndex;
 // Called as a result of dragging an annotation view.
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate NS_AVAILABLE(10_9, 4_0);
 

@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 @import CoreLocation;
 
-static NSString *VWWLocationControllerNewLocationKey = @"newLocation";
+static NSString *VWWSignificantLocationControllerNewLocationKey = @"newLocation";
 
-@interface VWWLocationController : NSObject
-+(VWWLocationController*)sharedInstance;
+@interface VWWSignificantLocationController : NSObject
++(VWWSignificantLocationController*)sharedInstance;
 -(void)start;
 -(void)stop;
 -(void)reset;

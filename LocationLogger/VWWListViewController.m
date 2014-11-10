@@ -8,7 +8,7 @@
 
 #import "VWWListViewController.h"
 #import "VWW.h"
-#import "VWWLocationController.h"
+#import "VWWSignificantLocationController.h"
 
 @interface VWWListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -26,7 +26,7 @@
 
     [self reloadCoordinates];
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:VWWLocationControllerNewLocationKey object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:VWWSignificantLocationControllerNewLocationKey object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self reloadCoordinates];
     }];
 

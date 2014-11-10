@@ -6,42 +6,32 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWLocationController.h"
+#import "VWWSignificantLocationController.h"
 #import "VWW.h"
 #import "AppDelegate.h"
 
-
-typedef enum {
-    CLLocationControllerStateStopped = 0,
-    CLLocationControllerStateSignificant = 1,
-    CLLocationControllerStateAccurate = 2,
-} CLLocationControllerState;
+#import "VWWAccurateLocationController.h"
 
 static NSString *SMLocationControllerLatitudeKey = @"latitude";
 static NSString *SMLocationControllerLongitudeKey = @"longitude";
 
 
-@interface VWWLocationController () <CLLocationManagerDelegate>
+@interface VWWSignificantLocationController () <CLLocationManagerDelegate>
 @property (nonatomic, strong) CLLocationManager *locationManager;
-//@property (nonatomic, strong) VWWArrayBlock locationsUpdatedBlock;
-//@property (nonatomic, strong) VWWCLLocationBlock currentLocationBlock;
-//@property (nonatomic, strong) NSTimer *timer;
-//@property (nonatomic, strong) CLLocation *lastUpdatedLocation;
 @property (nonatomic) BOOL isRunning;
-@property (nonatomic) CLLocationControllerState state;
 @property (nonatomic, copy) CLLocation *location;
 @end
 
-@implementation VWWLocationController
+@implementation VWWSignificantLocationController
 
 
 
 #pragma mark Public methods
 
-+(VWWLocationController*)sharedInstance{
-    static VWWLocationController *instance;
++(VWWSignificantLocationController*)sharedInstance{
+    static VWWSignificantLocationController *instance;
     if(instance == nil){
-        instance = [[VWWLocationController alloc]init];
+        instance = [[VWWSignificantLocationController alloc]init];
     }
     return instance;
 }
@@ -65,22 +55,13 @@ static NSString *SMLocationControllerLongitudeKey = @"longitude";
     if(self.isRunning) return;
     self.isRunning = YES;
     
-    //    [self.locationManager setDistanceFilter:kCLDistanceFilterNone];
-    //    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
-    //    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-    //    [self.locationManager startUpdatingHeading];
-    //    [self.locationManager startUpdatingLocation];
     [self.locationManager startMonitoringSignificantLocationChanges];
-    
-    
-    
 }
+
 -(void)stop{
     if(self.isRunning == NO) return;
     self.isRunning = NO;
     
-//    [self.locationManager stopUpdatingHeading];
-//    [self.locationManager stopUpdatingLocation];
     [self.locationManager stopMonitoringSignificantLocationChanges];
     
 }
@@ -138,12 +119,15 @@ static NSString *SMLocationControllerLongitudeKey = @"longitude";
                                          @"verticalAccuracy" : @(self.location.verticalAccuracy),
                                          @"altitude" : @(self.location.altitude),
                                          @"speed" : @(self.location.speed),
-                                         @"date" : self.location.timestamp}];
+                                         @"date" : self.location.timestamp,
+                                         @"accuracy" : @"significant"}];
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:VWWLocationControllerNewLocationKey object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:VWWSignificantLocationControllerNewLocationKey object:nil];
         
         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-        [appDelegate scheduleLocalNotificationWithMessage:@"App Currently Running"];
+        [appDelegate scheduleLocalNotificationWithMessage:[NSString stringWithFormat:@"App Currently Running. S. %@", self.location.description]];
+        
+        [[VWWAccurateLocationController sharedInstance]start];
     }
 }
 

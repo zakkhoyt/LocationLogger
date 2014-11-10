@@ -15,17 +15,20 @@
 
 static NSString *VWWUserDefaultCoordinates = @"VWWUserDefaultCoordinates";
 +(void)addCoordinate:(NSDictionary*)coordinateDictionary{
-    NSMutableArray *launchOptionsDictionaries = [[[NSUserDefaults standardUserDefaults]objectForKey:VWWUserDefaultCoordinates]mutableCopy];
-    if(launchOptionsDictionaries == nil){
-        launchOptionsDictionaries = [@[]mutableCopy];
+    NSMutableArray *coordinateDictionaries = [[[NSUserDefaults standardUserDefaults]objectForKey:VWWUserDefaultCoordinates]mutableCopy];
+    if(coordinateDictionaries == nil){
+        coordinateDictionaries = [@[]mutableCopy];
     }
-    [launchOptionsDictionaries insertObject:coordinateDictionary atIndex:0];
-    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:launchOptionsDictionaries] forKey:VWWUserDefaultCoordinates];
+    [coordinateDictionaries insertObject:coordinateDictionary atIndex:0];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:coordinateDictionaries] forKey:VWWUserDefaultCoordinates];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 +(NSArray*)coordinates{
-    NSArray *launchOptionsDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultCoordinates];
-    return launchOptionsDictionaries;
+    NSArray *coordinateDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultCoordinates];
+    if(coordinateDictionaries == nil){
+        coordinateDictionaries = [@[]mutableCopy];
+    }
+    return coordinateDictionaries;
 }
 +(void)clearCoordinates{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:VWWUserDefaultCoordinates];

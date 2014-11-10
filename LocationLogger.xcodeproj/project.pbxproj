@@ -16,12 +16,13 @@
 		C647B7C619F6F27C000352BA /* LocationLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7C519F6F27C000352BA /* LocationLoggerTests.m */; };
 		C647B7DB19F6F2BA000352BA /* VWWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7D619F6F2BA000352BA /* VWWUserDefaults.m */; };
 		C647B7DC19F6F2BA000352BA /* VWWUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7D819F6F2BA000352BA /* VWWUtilities.m */; };
-		C647B7DD19F6F2BA000352BA /* VWWLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7DA19F6F2BA000352BA /* VWWLocationController.m */; };
+		C647B7DD19F6F2BA000352BA /* VWWSignificantLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7DA19F6F2BA000352BA /* VWWSignificantLocationController.m */; };
 		C647B7E019F6FC2B000352BA /* VWWMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7DF19F6FC2B000352BA /* VWWMapViewController.m */; };
 		C647B7E319F6FC3E000352BA /* VWWLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7E219F6FC3E000352BA /* VWWLaunchViewController.m */; };
 		C647B7E619F6FCC8000352BA /* VWWAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7E519F6FCC8000352BA /* VWWAnnotation.m */; };
 		C647B7E819F6FDBF000352BA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C647B7E719F6FDBF000352BA /* MapKit.framework */; };
 		C647B7EB19F81E0D000352BA /* VWWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C647B7EA19F81E0D000352BA /* VWWSettingsViewController.m */; };
+		C6DE3E121A117B11009BFD85 /* VWWAccurateLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DE3E111A117B11009BFD85 /* VWWAccurateLocationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +57,8 @@
 		C647B7D619F6F2BA000352BA /* VWWUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWUserDefaults.m; sourceTree = "<group>"; };
 		C647B7D719F6F2BA000352BA /* VWWUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWUtilities.h; sourceTree = "<group>"; };
 		C647B7D819F6F2BA000352BA /* VWWUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWUtilities.m; sourceTree = "<group>"; };
-		C647B7D919F6F2BA000352BA /* VWWLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLocationController.h; sourceTree = "<group>"; };
-		C647B7DA19F6F2BA000352BA /* VWWLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLocationController.m; sourceTree = "<group>"; };
+		C647B7D919F6F2BA000352BA /* VWWSignificantLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSignificantLocationController.h; sourceTree = "<group>"; };
+		C647B7DA19F6F2BA000352BA /* VWWSignificantLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSignificantLocationController.m; sourceTree = "<group>"; };
 		C647B7DE19F6FC2B000352BA /* VWWMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMapViewController.h; sourceTree = "<group>"; };
 		C647B7DF19F6FC2B000352BA /* VWWMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMapViewController.m; sourceTree = "<group>"; };
 		C647B7E119F6FC3E000352BA /* VWWLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLaunchViewController.h; sourceTree = "<group>"; };
@@ -67,6 +68,8 @@
 		C647B7E719F6FDBF000352BA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C647B7E919F81E0D000352BA /* VWWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsViewController.h; sourceTree = "<group>"; };
 		C647B7EA19F81E0D000352BA /* VWWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsViewController.m; sourceTree = "<group>"; };
+		C6DE3E101A117B11009BFD85 /* VWWAccurateLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAccurateLocationController.h; sourceTree = "<group>"; };
+		C6DE3E111A117B11009BFD85 /* VWWAccurateLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAccurateLocationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +217,10 @@
 		C647B7F119F81E40000352BA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C647B7D919F6F2BA000352BA /* VWWLocationController.h */,
-				C647B7DA19F6F2BA000352BA /* VWWLocationController.m */,
+				C647B7D919F6F2BA000352BA /* VWWSignificantLocationController.h */,
+				C647B7DA19F6F2BA000352BA /* VWWSignificantLocationController.m */,
+				C6DE3E101A117B11009BFD85 /* VWWAccurateLocationController.h */,
+				C6DE3E111A117B11009BFD85 /* VWWAccurateLocationController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -352,7 +357,8 @@
 				C647B7EB19F81E0D000352BA /* VWWSettingsViewController.m in Sources */,
 				C647B7AC19F6F27C000352BA /* main.m in Sources */,
 				C647B7DB19F6F2BA000352BA /* VWWUserDefaults.m in Sources */,
-				C647B7DD19F6F2BA000352BA /* VWWLocationController.m in Sources */,
+				C647B7DD19F6F2BA000352BA /* VWWSignificantLocationController.m in Sources */,
+				C6DE3E121A117B11009BFD85 /* VWWAccurateLocationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
