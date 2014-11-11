@@ -25,9 +25,6 @@
 
     self.errorPolygons = [@[]mutableCopy];
     
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.2, 0.2);
-    MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.798766, -122.449373), span);
-    [self.mapView setRegion:region animated:NO];
     self.mapView.delegate = self;
     [self reloadCoordinates];
     
@@ -39,6 +36,21 @@
         [self reloadCoordinates];
     }];
 
+    
+    if(self.coordinateDictionaries.count){
+        MKCoordinateSpan span = MKCoordinateSpanMake(0.05, 0.05);
+        NSDictionary *dictionary = self.coordinateDictionaries[0];
+        NSNumber *latitudeNumber = dictionary[@"latitude"];
+        NSNumber *longitudeNumber = dictionary[@"longitude"];
+        
+        MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(latitudeNumber.doubleValue, longitudeNumber.doubleValue), span);
+        [self.mapView setRegion:region animated:NO];
+    } else {
+        MKCoordinateSpan span = MKCoordinateSpanMake(0.5, 0.5);
+        MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.798766, -122.449373), span);
+        [self.mapView setRegion:region animated:NO];
+
+    }
 }
 
 -(BOOL)prefersStatusBarHidden{

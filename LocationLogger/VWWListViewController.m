@@ -75,13 +75,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     NSDictionary *dictionary = self.coordinateDictionaries[indexPath.row];
     
+    NSString *accuracy = dictionary[@"accuracy"];
     NSNumber *latitudeNumber = dictionary[@"latitude"];
     NSNumber *longitudeNumber = dictionary[@"longitude"];
     NSNumber *horizontalAccuracyNumber = dictionary[@"horizontalAccuracy"];
     NSNumber *verticalAccuracyNumber = dictionary[@"verticalAccuracy"];
     NSDate *date = dictionary[@"date"];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%.4f, %.4f +/- %.1fh %.1fv",
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %.4f, %.4f +/- %.1fh %.1fv",
+                           accuracy,
                            latitudeNumber.floatValue,
                            longitudeNumber.floatValue,
                            horizontalAccuracyNumber.floatValue,
