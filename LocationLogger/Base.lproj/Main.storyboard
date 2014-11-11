@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="647"/>
+            <point key="canvasLocation" x="-1254" y="2463"/>
         </scene>
         <!--Launch-->
         <scene sceneID="0DT-cw-sqB">
@@ -105,7 +105,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1j-io-JKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="2094"/>
+            <point key="canvasLocation" x="404" y="2470"/>
         </scene>
         <!--Settings-->
         <scene sceneID="17w-ak-MRZ">
@@ -146,6 +146,35 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jE0-9b-ovt">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jE0-9b-ovt" id="vVY-mE-2uC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AAF-0v-Xuf">
+                                                    <rect key="frame" x="543" y="7" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="notificationsSwitchValueChanged:" destination="p4v-Tf-L2J" eventType="valueChanged" id="uqJ-vc-kSs"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Generate Local Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmC-VT-Fyi">
+                                                    <rect key="frame" x="15" y="0.0" width="520" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vmC-VT-Fyi" firstAttribute="leading" secondItem="vVY-mE-2uC" secondAttribute="leading" constant="15" id="BbC-Hm-0I1"/>
+                                                <constraint firstItem="AAF-0v-Xuf" firstAttribute="leading" secondItem="vmC-VT-Fyi" secondAttribute="trailing" constant="8" id="FEM-mf-gc9"/>
+                                                <constraint firstItem="AAF-0v-Xuf" firstAttribute="top" secondItem="vVY-mE-2uC" secondAttribute="topMargin" constant="-2" id="L6C-nm-gQF"/>
+                                                <constraint firstAttribute="bottom" secondItem="vmC-VT-Fyi" secondAttribute="bottom" constant="1" id="SNH-lz-LbY"/>
+                                                <constraint firstItem="AAF-0v-Xuf" firstAttribute="trailing" secondItem="vVY-mE-2uC" secondAttribute="trailingMargin" id="pOx-Zu-yhn"/>
+                                                <constraint firstItem="vmC-VT-Fyi" firstAttribute="top" secondItem="vVY-mE-2uC" secondAttribute="top" id="z1A-Ip-voF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -155,10 +184,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" id="zLq-kb-YwU"/>
+                    <connections>
+                        <outlet property="notificationsSwitch" destination="AAF-0v-Xuf" id="RkD-Ks-8Uh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRI-ar-eg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="2094"/>
+            <point key="canvasLocation" x="1167" y="2469"/>
         </scene>
         <!--Map-->
         <scene sceneID="CU8-CV-adh">
@@ -191,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQp-gx-Ohy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="1394"/>
+            <point key="canvasLocation" x="-445" y="2475"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pkm-F3-f71">
@@ -212,7 +244,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8k-ri-mRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341" y="647"/>
+            <point key="canvasLocation" x="-147" y="647"/>
         </scene>
     </scenes>
 </document>

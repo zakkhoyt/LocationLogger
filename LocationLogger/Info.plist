@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.vaporwarewolf.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>com.radiusapp.locationlogger</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>With this mode, you will never miss your friend's photos.</string>
+	<string>With this mode, you will never miss your friend&apos;s photos.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To see the maximimum amount of photos, select always. </string>
 	<key>UIBackgroundModes</key>

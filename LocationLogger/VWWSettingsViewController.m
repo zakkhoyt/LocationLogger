@@ -9,6 +9,7 @@
 #import "VWWSettingsViewController.h"
 #import "VWW.h"
 @interface VWWSettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *notificationsSwitch;
 
 @end
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.notificationsSwitch.on = [VWWUserDefaults localNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +44,10 @@
 */
 
 
+- (IBAction)notificationsSwitchValueChanged:(UISwitch*)sender {
+    [VWWUserDefaults setLocalNotifications:sender.on];
+}
+
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -48,5 +57,7 @@
         [VWWUserDefaults clearLaunchOptions];
     }
 }
+
+
 
 @end

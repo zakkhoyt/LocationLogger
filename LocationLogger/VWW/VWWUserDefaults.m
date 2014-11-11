@@ -14,22 +14,28 @@
 
 
 static NSString *VWWUserDefaultCoordinates = @"VWWUserDefaultCoordinates";
+
+// Get current array (check for nil), add, then write back.
 +(void)addCoordinate:(NSDictionary*)coordinateDictionary{
-    NSMutableArray *coordinateDictionaries = [[[NSUserDefaults standardUserDefaults]objectForKey:VWWUserDefaultCoordinates]mutableCopy];
-    if(coordinateDictionaries == nil){
-        coordinateDictionaries = [@[]mutableCopy];
+    NSMutableArray *dictionaries = [[[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultCoordinates]mutableCopy];
+    if(dictionaries == nil){
+        dictionaries = [@[]mutableCopy];
     }
-    [coordinateDictionaries insertObject:coordinateDictionary atIndex:0];
-    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:coordinateDictionaries] forKey:VWWUserDefaultCoordinates];
+    [dictionaries insertObject:coordinateDictionary atIndex:0];
+    [[NSUserDefaults standardUserDefaults] setObject:dictionaries forKey:VWWUserDefaultCoordinates];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+// Return array (check for nil)
 +(NSArray*)coordinates{
-    NSArray *coordinateDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultCoordinates];
-    if(coordinateDictionaries == nil){
-        coordinateDictionaries = [@[]mutableCopy];
+    NSMutableArray *dictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultCoordinates];
+    if(dictionaries == nil){
+        dictionaries = [@[]mutableCopy];
     }
-    return coordinateDictionaries;
+    return dictionaries;
 }
+
+// Remove array
 +(void)clearCoordinates{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:VWWUserDefaultCoordinates];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -39,22 +45,36 @@ static NSString *VWWUserDefaultCoordinates = @"VWWUserDefaultCoordinates";
 
 static NSString *VWWUserDefaultLaunchOptionsKey = @"VWWUserDefaultLaunchOptionsKey";
 +(void)addLaunchOptions:(NSDictionary*)launchParameter{
-    NSMutableArray *launchOptionsDictionaries = [[[NSUserDefaults standardUserDefaults]objectForKey:VWWUserDefaultLaunchOptionsKey]mutableCopy];
-    if(launchOptionsDictionaries == nil){
-        launchOptionsDictionaries = [@[]mutableCopy];
+    NSMutableArray *dictionaries = [[[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultLaunchOptionsKey]mutableCopy];
+    if(dictionaries == nil){
+        dictionaries = [@[]mutableCopy];
     }
-    [launchOptionsDictionaries insertObject:launchParameter atIndex:0];
-    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:launchOptionsDictionaries] forKey:VWWUserDefaultLaunchOptionsKey];
+    [dictionaries insertObject:launchParameter atIndex:0];
+    [[NSUserDefaults standardUserDefaults] setObject:dictionaries forKey:VWWUserDefaultLaunchOptionsKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 +(NSArray*)launchOptions{
-    NSArray *launchOptionsDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultLaunchOptionsKey];
-    return launchOptionsDictionaries;
+    NSMutableArray *dictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultLaunchOptionsKey];
+    if(dictionaries == nil){
+        dictionaries = [@[]mutableCopy];
+    }
+    return dictionaries;
 }
 
 +(void)clearLaunchOptions{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:VWWUserDefaultLaunchOptionsKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+
+static NSString *VWWUserDefaultLocalNotificationsKey = @"localNotifications";
++(void)setLocalNotifications:(BOOL)on{
+    [[NSUserDefaults standardUserDefaults] setBool:on forKey:VWWUserDefaultLocalNotificationsKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
++(BOOL)localNotifications{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:VWWUserDefaultLocalNotificationsKey];
+}
+
 @end

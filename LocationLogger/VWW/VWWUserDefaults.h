@@ -12,6 +12,9 @@
 
 @interface VWWUserDefaults : NSObject
 
+
+
+
 +(void)addCoordinate:(NSDictionary*)coordinateDictionary;
 +(NSArray*)coordinates;
 +(void)clearCoordinates;
@@ -20,4 +23,8 @@
 +(void)addLaunchOptions:(NSDictionary*)launchParameter;
 +(NSArray*)launchOptions;
 +(void)clearLaunchOptions;
+
+
++(void)setLocalNotifications:(BOOL)on;
++(BOOL)localNotifications;
 @end
